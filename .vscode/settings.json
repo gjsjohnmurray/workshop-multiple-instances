@@ -1,28 +1,2 @@
 {
-    "intersystems.servers": {
-        "mirror-a": {
-            "webServer": {
-                "scheme": "http",
-                "host": "localhost",
-                "port": 52775
-            },
-            "username": "superuser"
-        },
-        "mirror-b": {
-            "webServer": {
-                "scheme": "http",
-                "host": "localhost",
-                "port": 52776
-            },
-            "username": "superuser"
-        },
-        "mirror-dr": {
-            "webServer": {
-                "scheme": "http",
-                "host": "localhost",
-                "port": 52777
-            },
-            "username": "superuser"
-        }
-    }
 }

@@ -1,0 +1,43 @@
+{
+	"folders": [
+        {
+            "path": "."
+        },
+        {
+            "name": "mirror-a:INTEROP",
+            "uri": "isfs://mirror-a:interop/?mapped=0"
+        },
+        {
+            "name": "mirror-a:INTEROP-TEST",
+            "uri": "isfs://mirror-a:interop-test/?mapped=0"
+        }
+    ],
+	"settings": {
+        "intersystems.servers": {
+            "mirror-a": {
+                "webServer": {
+                    "scheme": "http",
+                    "host": "localhost",
+                    "port": 52775
+                },
+                "username": "superuser"
+            },
+            "mirror-b": {
+                "webServer": {
+                    "scheme": "http",
+                    "host": "localhost",
+                    "port": 52776
+                },
+                "username": "superuser"
+            },
+            "mirror-dr": {
+                "webServer": {
+                    "scheme": "http",
+                    "host": "localhost",
+                    "port": 52777
+                },
+                "username": "superuser"
+            }
+        }
+    }
+}
