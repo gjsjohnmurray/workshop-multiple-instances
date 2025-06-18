@@ -10,8 +10,10 @@ services:
       command: 
         - /usr/local/etc/irissys/startISCAgent.sh 2188
 
-  mirrorA:
-    image: containers.intersystems.com/intersystems/iris:2023.1
+  mirror-a:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: mirrorA
     depends_on:
       - arbiter
@@ -30,12 +32,14 @@ services:
     - ISC_DATA_DIRECTORY=/shared/durable
     hostname: mirrorA
 
-  mirrorB:
-    image: containers.intersystems.com/intersystems/iris:2023.1
+  mirror-b:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: mirrorB
     depends_on:
       - arbiter
-      - mirrorA
+      - mirror-a
     ports:
     - "52776:52773"
     - "51776:1972"
@@ -51,13 +55,15 @@ services:
     - ISC_DATA_DIRECTORY=/shared/durable
     hostname: mirrorB
   
-  mirrorDR:
-    image: containers.intersystems.com/intersystems/iris:2023.1
+  mirror-dr:
+    build: 
+      context: .
+      dockerfile: Dockerfile
     container_name: mirrorDR
     depends_on:
       - arbiter
-      - mirrorA
-      - mirrorB
+      - mirror-a
+      - mirror-b
     ports:
     - "52777:52773"
     - "51777:1972"
